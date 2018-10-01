@@ -28,7 +28,7 @@ class VehicleList extends Component {
         return (
             <div>
                 <h3>차량 조회</h3>
-                <Table responsive>
+                <Table responsive hover>
                     <thead>
                         <tr>
                             <td>ID</td>
