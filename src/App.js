@@ -1,39 +1,80 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+    Navbar,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    Container,
+    Row,
+    Col,
+    NavbarToggler,
+    Collapse,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+} from "reactstrap";
 
-import './assets/css/bootstrap.min.css';
-import './assets/css/bootstrap-theme.min.css';
-import './assets/css/custom.css';
+import './assets/css/common.css';
 
 import Home from './views/Home.js';
-import NoticeList from './views/NoticeList.js';
-import NoticeDetail from './views/NoticeDetail.js';
+import VehicleList from './views/VehicleList';
 
 class App extends Component {
-  render() {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            isOpen: false
+        };
+    }
+
+    toggle = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
+    render() {
     return (
         <Router>
-            <div className="wrapper">
+            <div>
+                <Navbar color="dark" dark expand="md">
+                    <NavbarBrand tag={Link} to="/">사용자</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav navbar>
+                        <NavItem>
+                            <NavLink tag={Link} to="vehicleList">차량 조회</NavLink>
+                        </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
 
-                {/* Sidebar */}
-                <nav id="sidebar">                
-                    <h3>Bootstrap Sidebar</h3>
-                    <ul>
-                        <li>
-                            <Link to="/">메인</Link>
-                        </li>
-                        <li>
-                            <Link to="/noticeList">게시물 목록</Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* Page Content */}
-                <div id="content">
-                    <Route exact path="/" component={Home} />
-                    <Route path="/noticeList" component={NoticeList} />
-                    <Route path="/noticeDetail/:noticeId" component={NoticeDetail} />
-                </div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <div className="content">
+                                <Route exact path="/" component={Home} />
+                                <Route path="/vehicleList" component={VehicleList} />
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col align="right">
+                            <div className="footer small">
+                                <ul className="list-inline">
+                                    <li className="list-inline-item">
+                                        Developed by 권혁찬
+                                    </li>
+                                </ul>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>  
         </Router>
     );

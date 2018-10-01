@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Jumbotron, Button } from 'reactstrap';
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <h3>메인화면</h3> 
-                <br/>
-                <p>메인화면입니다...</p>           
+                <Jumbotron>
+                    <h1 className="display-3">UBI 사용자 페이지</h1>
+                    <hr className="my-2" />
+                    <p>환영합니다.</p>
+                </Jumbotron>
             </div>
         );
     }
