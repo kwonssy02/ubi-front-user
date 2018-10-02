@@ -2,51 +2,50 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
 
-class VehicleList extends Component {
+class InsurerList extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            vehicleList: []
+            insurerList: []
         };
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/vehicle")
+        fetch(process.env.REACT_APP_API_URL + "/insurer")
         .then((response) => {
             return response.json();
         })
         .then((data) => {
             this.setState({
-                vehicleList:data
+                insurerList:data
             })
         });
     }
 
     render() {
-        const { vehicleList } = this.state;
+        const { insurerList } = this.state;
         return (
             <div>
-                <h3>차량 조회</h3>
+                <h3>보험사 조회</h3>
                 <Table responsive hover>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Vehicle Type</th>
-                            <th>Owner</th>
-                            <th>Ownership</th>
-                            <th>Color</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Company Name</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {vehicleList.map((vehicle, key) => {
+                        {insurerList.map((insurer, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{vehicle.vehicleId}</td>
-                                    <td>{vehicle.vehicleType}</td>
-                                    <td>{vehicle.owner}</td>
-                                    <td>{vehicle.ownershipType}</td>
-                                    <td>{vehicle.color}</td>
+                                    <td>{insurer.insurerId}</td>
+                                    <td>{insurer.email}</td>
+                                    <td>{insurer.phone}</td>
+                                    <td>{insurer.companyName}</td>
                                 </tr>
                             );
                         })}
@@ -57,4 +56,4 @@ class VehicleList extends Component {
     }
 }
 
-export default VehicleList;
+export default InsurerList;
