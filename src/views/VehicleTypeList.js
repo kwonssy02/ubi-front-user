@@ -12,7 +12,7 @@ class VehicleTypeList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/vehicleType")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.VehicleType")
         .then((response) => {
             return response.json();
         })
@@ -40,7 +40,7 @@ class VehicleTypeList extends Component {
                         {vehicleTypeList.map((vehicleType, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{vehicleType.vehicleTypeId}</td>
+                                    <td>{vehicleType.vehicleType}</td>
                                     <td>{vehicleType.vehicleName}</td>
                                     <td>{vehicleType.releasedDate}</td>
                                 </tr>
