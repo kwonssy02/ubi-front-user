@@ -93,7 +93,7 @@ class App extends Component {
                             <div className="footer small">
                                 <ul className="list-inline">
                                     <li className="list-inline-item">
-                                        Developed by 권혁찬
+                                        Developed by CDS Team
                                     </li>
                                 </ul>
                             </div>

@@ -12,11 +12,12 @@ class VehicleList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/vehicle")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.Vehicle")
         .then((response) => {
             return response.json();
         })
         .then((data) => {
+            console.log(data);
             this.setState({
                 vehicleList:data
             })
@@ -44,7 +45,7 @@ class VehicleList extends Component {
                                 <tr key={key}>
                                     <td>{vehicle.vehicleId}</td>
                                     <td>{vehicle.vehicleType}</td>
-                                    <td>{vehicle.owner}</td>
+                                    <td>{vehicle.owner === 'undefined' ? 'N/A': vehicle.owner}</td>
                                     <td>{vehicle.ownershipType}</td>
                                     <td>{vehicle.color}</td>
                                 </tr>
