@@ -12,7 +12,7 @@ class UserList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/user")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.participant.User")
         .then((response) => {
             return response.json();
         })
@@ -41,7 +41,7 @@ class UserList extends Component {
                         {userList.map((user, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{user.userId}</td>
+                                    <td>{user.participantKey}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.phone}</td>
