@@ -12,7 +12,7 @@ class VehicleTypeList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.VehicleType")
+        fetch(process.env.REACT_APP_API_URL + "/VehicleType")
         .then((response) => {
             return response.json();
         })

@@ -12,7 +12,7 @@ class InsurerList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.participant.InsuranceCompany")
+        fetch(process.env.REACT_APP_API_URL + "/InsuranceCompany")
         .then((response) => {
             return response.json();
         })

@@ -12,7 +12,7 @@ class ManufacturerList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.participant.Manufacturer")
+        fetch(process.env.REACT_APP_API_URL + "/Manufacturer")
         .then((response) => {
             return response.json();
         })

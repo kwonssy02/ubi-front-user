@@ -14,7 +14,7 @@ class VehicleList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.Vehicle")
+        fetch(process.env.REACT_APP_API_URL + "/Vehicle")
         .then((response) => {
             return response.json();
         })
@@ -26,7 +26,7 @@ class VehicleList extends Component {
             let vehicleList = [];
             data.map((i,key) => {
                 let vehicleTypeId = i.vehicleType.slice(i.vehicleType.indexOf('#')+1);
-                fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.VehicleType/" + vehicleTypeId)
+                fetch(process.env.REACT_APP_API_URL + "/VehicleType/" + vehicleTypeId)
                 .then((response) => {
                     return response.json();
                 })
@@ -34,8 +34,9 @@ class VehicleList extends Component {
                     let vehicleId = i.vehicleId;
                     let vehicleType = data.vehicleName + ', ' + dateformat(data.releasedDate,'yyyy');
                     let ownershipType = i.ownershipType;
+                    let owner = i.owner;
                     let color = i.color;
-                    let vehicleData = { vehicleId, vehicleType, ownershipType, color };
+                    let vehicleData = { vehicleId, vehicleType, owner, ownershipType, color };
                     this.pushStateData(vehicleData);
                 });
             });
@@ -100,7 +101,7 @@ class VehicleList extends Component {
                                 <tr key={key}>
                                     <td>{vehicle.vehicleId}</td>
                                     <td>{vehicle.vehicleType}</td>
-                                    <td>{vehicle.owner === 'undefined' ? 'N/A': vehicle.owner}</td>
+                                    <td>{vehicle.owner === 'undefined' ? 'N/A': vehicle.owner.slice(vehicle.owner.indexOf('#')+1)}</td>
                                     <td>{vehicle.ownershipType}</td>
                                     <td>{vehicle.color}</td>
                                 </tr>

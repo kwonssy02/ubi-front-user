@@ -26,6 +26,8 @@ import VehicleList from './views/VehicleList';
 import InsertVehicleData from './views/InsertVehicleData';
 import InsertVehicleType from './views/InsertVehicleType';
 import InsertVehicle from './views/InsertVehicle';
+import UpdateDataProvidingAgreement from './views/UpdateDataProvidingAgreement';
+
 import VehicleTypeList from './views/VehicleTypeList';
 import ManufacturerList from './views/ManufacturerList';
 import UserList from './views/UserList';
@@ -57,13 +59,16 @@ class App extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink tag={Link} to="insertVehicleData">차량 데이터 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicleData">차량 데이터 등록</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="insertVehicleType">차종 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicleType">차종 등록</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="insertVehicle">차량 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicle">차량 등록</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/updateDataProvidingAgreement">보험사 정보 제공 동의</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} to="/vehicleList">차량 조회</NavLink>
@@ -96,6 +101,8 @@ class App extends Component {
                                 <Route path="/insertVehicleData" component={InsertVehicleData} />
                                 <Route path="/insertVehicleType" component={InsertVehicleType} />
                                 <Route path="/insertVehicle" component={InsertVehicle} />
+                                <Route path="/updateDataProvidingAgreement" component={UpdateDataProvidingAgreement} />
+
                                 <Route path="/userList" component={UserList} />
                                 <Route path="/manufacturerList" component={ManufacturerList} />
                                 <Route path="/vehicleTypeList" component={VehicleTypeList} />
