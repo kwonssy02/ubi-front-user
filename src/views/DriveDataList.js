@@ -51,7 +51,7 @@ class DriveDataList extends Component {
                             return (
                                 <tr key={key}>
                                     <td>{driveData.vehicleDataId}</td>
-                                    <td>{driveData.vehicle}</td>
+                                    <td>{driveData.vehicle.slice(driveData.vehicle.indexOf('#')+1)}</td>
                                     <td>{driveData.occuredDate}</td>
                                     <td>{driveData.speed}</td>
                                     <td>{driveData.angle}</td>
