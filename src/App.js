@@ -22,10 +22,15 @@ import './assets/css/common.css';
 
 import Home from './views/Home.js';
 import VehicleList from './views/VehicleList';
+
 import InsertVehicleData from './views/InsertVehicleData';
 import InsertVehicleType from './views/InsertVehicleType';
 import InsertVehicle from './views/InsertVehicle';
-
+import VehicleTypeList from './views/VehicleTypeList';
+import ManufacturerList from './views/ManufacturerList';
+import UserList from './views/UserList';
+import InsurerList from './views/InsurerList';
+import DriveDataList from './views/DriveDataList';
 
 class App extends Component {
     constructor(props) {
@@ -52,9 +57,6 @@ class App extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink tag={Link} to="vehicleList">차량 조회</NavLink>
-                            </NavItem>
-                            <NavItem>
                                 <NavLink tag={Link} to="insertVehicleData">차량 데이터 등록</NavLink>
                             </NavItem>
                             <NavItem>
@@ -62,6 +64,24 @@ class App extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} to="insertVehicle">차량 등록</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/vehicleList">차량 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/userList">사용자 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/vehicleTypeList">차종 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/manufacturerList">제조사 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/insurerList">보험사 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/driveDataList">주행데이터 조회</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
@@ -76,6 +96,11 @@ class App extends Component {
                                 <Route path="/insertVehicleData" component={InsertVehicleData} />
                                 <Route path="/insertVehicleType" component={InsertVehicleType} />
                                 <Route path="/insertVehicle" component={InsertVehicle} />
+                                <Route path="/userList" component={UserList} />
+                                <Route path="/manufacturerList" component={ManufacturerList} />
+                                <Route path="/vehicleTypeList" component={VehicleTypeList} />
+                                <Route path="/insurerList" component={InsurerList} />
+                                <Route path="/driveDataList" component={DriveDataList} />
                             </div>
                         </Col>
                     </Row>
