@@ -12,7 +12,7 @@ class DriveDataList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/driveData")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.asset.VehicleData")
         .then((response) => {
             return response.json();
         })
@@ -50,11 +50,11 @@ class DriveDataList extends Component {
                         {driveDataList.map((driveData, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{driveData.vehicleId}</td>
-                                    <td>{driveData.vehicleType}</td>
-                                    <td>{driveData.owner}</td>
-                                    <td>{driveData.ownershipType}</td>
-                                    <td>{driveData.color}</td>
+                                    <td>{driveData.vehicleDataId}</td>
+                                    <td>{driveData.vehicle}</td>
+                                    <td>{driveData.occuredDate}</td>
+                                    <td>{driveData.speed}</td>
+                                    <td>{driveData.angle}</td>
                                 </tr>
                             );
                         })}

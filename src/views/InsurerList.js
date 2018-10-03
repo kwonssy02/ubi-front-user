@@ -12,7 +12,7 @@ class InsurerList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/insurer")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.participant.InsuranceCompany")
         .then((response) => {
             return response.json();
         })
@@ -32,20 +32,21 @@ class InsurerList extends Component {
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Company Name</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Company Name</th>
                         </tr>
                     </thead>
                     <tbody>
                         {insurerList.map((insurer, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{insurer.insurerId}</td>
+                                    <td>{insurer.participantKey}</td>
+                                    <td>{insurer.companyName}</td>
+                                    <td>{insurer.name}</td>
                                     <td>{insurer.email}</td>
                                     <td>{insurer.phone}</td>
-                                    <td>{insurer.companyName}</td>
                                 </tr>
                             );
                         })}
