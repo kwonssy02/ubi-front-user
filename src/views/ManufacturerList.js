@@ -12,7 +12,7 @@ class ManufacturerList extends Component {
     }
 
     componentDidMount() {
-        fetch(process.env.REACT_APP_API_URL + "/manufacturer")
+        fetch(process.env.REACT_APP_API_URL + "/com.autoever.ubi.participant.Manufacturer")
         .then((response) => {
             return response.json();
         })
@@ -32,21 +32,21 @@ class ManufacturerList extends Component {
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Company Name</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Company Name</th>
                         </tr>
                     </thead>
                     <tbody>
                         {manufacturerList.map((manufacturer, key) => {
                             return (
                                 <tr key={key}>
-                                    <td>{manufacturer.manufacturerId}</td>
-                                    <td>{manufacturer.manufacturerName}</td>
+                                    <td>{manufacturer.participantKey}</td>
+                                    <td>{manufacturer.companyName}</td>
+                                    <td>{manufacturer.name}</td>
                                     <td>{manufacturer.email}</td>
                                     <td>{manufacturer.phone}</td>
-                                    <td>{manufacturer.companyName}</td>
                                 </tr>
                             );
                         })}
