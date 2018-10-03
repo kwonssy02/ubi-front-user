@@ -22,6 +22,10 @@ import './assets/css/common.css';
 
 import Home from './views/Home.js';
 import VehicleList from './views/VehicleList';
+import InsertVehicleData from './views/InsertVehicleData';
+import InsertVehicleType from './views/InsertVehicleType';
+import InsertVehicle from './views/InsertVehicle';
+
 
 class App extends Component {
     constructor(props) {
@@ -43,13 +47,22 @@ class App extends Component {
         <Router>
             <div>
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand tag={Link} to="/">사용자</NavbarBrand>
+                    <NavbarBrand tag={Link} to="/">UBI</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav navbar>
-                        <NavItem>
-                            <NavLink tag={Link} to="vehicleList">차량 조회</NavLink>
-                        </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="vehicleList">차량 조회</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="insertVehicleData">차량 데이터 등록</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="insertVehicleType">차종 등록</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="insertVehicle">차량 등록</NavLink>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
@@ -60,6 +73,9 @@ class App extends Component {
                             <div className="content">
                                 <Route exact path="/" component={Home} />
                                 <Route path="/vehicleList" component={VehicleList} />
+                                <Route path="/insertVehicleData" component={InsertVehicleData} />
+                                <Route path="/insertVehicleType" component={InsertVehicleType} />
+                                <Route path="/insertVehicle" component={InsertVehicle} />
                             </div>
                         </Col>
                     </Row>
