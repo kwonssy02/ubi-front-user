@@ -6,7 +6,7 @@ class Home extends Component {
         return (
             <div>
                 <Jumbotron>
-                    <h1 className="display-3">UBI 사용자 페이지</h1>
+                    <h3>UBI 사용자 페이지</h3>
                     <hr className="my-2" />
                     <p>환영합니다.</p>
                 </Jumbotron>
