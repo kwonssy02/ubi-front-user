@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, NavLink as RRNavLink } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     Navbar,
@@ -59,34 +59,34 @@ class App extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink tag={Link} to="/insertVehicleData">차량 데이터 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicleData" tag={RRNavLink}>차량 데이터 등록</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/insertVehicleType">차종 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicleType" tag={RRNavLink}>차종 등록</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/insertVehicle">차량 등록</NavLink>
+                                <NavLink tag={Link} to="/insertVehicle" tag={RRNavLink}>차량 등록</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/updateDataProvidingAgreement">보험사 정보 제공 동의</NavLink>
+                                <NavLink tag={Link} to="/updateDataProvidingAgreement" tag={RRNavLink}>보험사 정보 제공 동의</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/vehicleList">차량 조회</NavLink>
+                                <NavLink tag={Link} to="/vehicleList" tag={RRNavLink}>차량 조회</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/userList">사용자 조회</NavLink>
+                                <NavLink tag={Link} to="/userList" tag={RRNavLink}>사용자 조회</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/vehicleTypeList">차종 조회</NavLink>
+                                <NavLink tag={Link} to="/vehicleTypeList" tag={RRNavLink}>차종 조회</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/manufacturerList">제조사 조회</NavLink>
+                                <NavLink tag={Link} to="/manufacturerList" tag={RRNavLink}>제조사 조회</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/insurerList">보험사 조회</NavLink>
+                                <NavLink tag={Link} to="/insurerList" tag={RRNavLink}>보험사 조회</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to="/driveDataList">주행데이터 조회</NavLink>
+                                <NavLink tag={Link} to="/driveDataList" tag={RRNavLink}>주행데이터 조회</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
@@ -116,7 +116,7 @@ class App extends Component {
                             <div className="footer small">
                                 <ul className="list-inline">
                                     <li className="list-inline-item">
-                                        Developed by 권혁찬
+                                        Developed by 여현승, 권혁찬
                                     </li>
                                 </ul>
                             </div>

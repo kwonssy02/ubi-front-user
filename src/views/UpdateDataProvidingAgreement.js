@@ -10,7 +10,7 @@ class updateDataProvidingAgreement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userId: 'kwonhc',
+            userId: 'lim',
             agreementContent: '자료제공에 동의합니다.',
             radioAgree: 'disagree',
             vehicleId: '',
